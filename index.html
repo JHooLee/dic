@@ -10,7 +10,7 @@
 <body>
     <!-- 검색창 -->
     <div id="search-box">
-        <input id="search" type="text" value="">
+        <input id="search" type="text" value="" placeholder="검색">
         <input id="submit" type="submit" value="submit">
     </div>
 
@@ -34,11 +34,18 @@
                 const {words} = data;
 
                 const template = words.map(word => {
+                    if(word.r_seq == undefined){
+                        word.r_seq = "";
+                    }
                     return (
                         `
                             <div class="item">
-                                <div class="word">${word.name}</div>
-                                <p class="description">${word.description}</p>
+                                <div class="r_word">
+                                    <a href="${word.r_link}" style="text-decoration:none"><b>${word.r_word}</b> <sup>${word.r_seq}</sup></a>
+                                    ${word.r_chi}
+                                    <p>${word.r_pos}
+                                    ${word.r_des}</p>
+                                </div>
                             </div>
                         `
                     )
