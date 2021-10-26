@@ -43,7 +43,7 @@ body {
     /* height: 300px; */ 
     margin-bottom: 10px;
     padding-left: 15px;
-    background: rgb(255, 224, 224);
+    background-color: #ffeef2;
     display: inline-block; /* 컬럼 짤림 방지*/
 }
 

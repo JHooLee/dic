@@ -34,14 +34,14 @@
                 const {words} = data;
 
                 const template = words.map(word => {
-                    if(word.r_seq == undefined){
-                        word.r_seq = "";
-                    }
+                    // if(word.r_seq == undefined){
+                    //     word.r_seq = "";
+                    // }
                     return (
                         `
                             <div class="item">
                                 <div class="r_word">
-                                    <a href="${word.r_link}" style="text-decoration:none"><b>${word.r_word}</b> <sup>${word.r_seq}</sup></a>
+                                    <a href="${word.r_link}" style="text-decoration:none"><b>${word.r_word}</b> <sup>${word.r_seq? word.r_seq:""}</sup></a>
                                     ${word.r_chi}
                                     <p>${word.r_pos}
                                     ${word.r_des}</p>
