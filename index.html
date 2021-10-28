@@ -15,57 +15,9 @@
     </div>
 
     <!-- 사전 -->
-    <div id="container"></div>
-    <script>
-        const query = document.getElementById('search')
-        const submitButton = document.getElementById('submit')
-        const BASE_URL = 'http://localhost:5007/api/words'
-
-        // 서버 데이터 가져오기
-        function getData(baseUrl, query){
-            fetch(`${baseUrl}/${query}`, {
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                const {words} = data;
-
-                const template = words.map(word => {
-                    // if(word.r_seq == undefined){
-                    //     word.r_seq = "";
-                    // }
-                    return (
-                        `
-                            <div class="item">
-                                <div class="r_word">
-                                    <a href="${word.r_link}" style="text-decoration:none"><b>${word.r_word}</b> <sup>${word.r_seq? word.r_seq:""}</sup></a>
-                                    ${word.r_chi}
-                                    <p>${word.r_pos}
-                                    ${word.r_des}</p>
-                                </div>
-                            </div>
-                        `
-                    )
-                })
-                container.innerHTML = template.join("")//DOM 에 Template 삽입
-            })
-        }
-
-        submitButton.addEventListener('click', function(){
-            console.log(query.value)
-            getData(BASE_URL, query.value)
-        })
-        query.addEventListener('keypress', function(e){
-            if(e.keyCode === 13){
-                getData(BASE_URL, query.value)
-            }
-        })
-        window.addEventListener('DOMContentLoaded', function(){
-            getData(BASE_URL)
-        })
-    </script>
+    <div id="container">
+        <img src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk4Uol7VnzEV8ZIb3Bxz8OrALD_oNwd-ONnQ&usqp=CAU"
+    </div>
+    <script src="app.js"/>    
 </body>
 </html>
