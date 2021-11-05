@@ -1,7 +1,10 @@
 const query = document.getElementById('search')
 const submitButton = document.getElementById('submit')
-// const BASE_URL = 'http://localhost:5500/api/words'
-const BASE_URL = 'https://dictionary-search-jhl.herokuapp.com/api/words'
+// const optionW = document.getElementById('optionw')
+// const optionM = document.getElementById('optionm')
+// const optionWM = document.getElementById('optionwm')
+const BASE_URL = 'http://localhost:5500/api/words'
+// const BASE_URL = 'https://dictionary-search-jhl.herokuapp.com/api/words'
 function checkIfStringHasSpecialCharacter(str) {//특수문자 포함 여부
     // const re = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
     const re = /[`!@#$%^&*()_+\-=\[\]{};':"\\|.<>\/?~]/;//공백과 , 제외
@@ -66,6 +69,7 @@ function getData(baseUrl, query){
             return;
         }    
         // document.getElementById('line').style.backgroundColor = rgb(255,224,224)
+
         const template = words.map(word => {
             // if(word.r_seq == undefined){
             //     word.r_seq = "";
